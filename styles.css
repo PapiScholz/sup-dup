@@ -1,0 +1,277 @@
+/* ========== Reset suave y base ========== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { 
+  color-scheme: light dark; 
+  -webkit-text-size-adjust: 100%;
+}
+
+:root {
+  /* Paleta (claro) */
+  --bg: #0b0c0e;            /* fondo raíz en dark y contenedor en light/dark coherente */
+  --surface: #0f1115;       /* paneles */
+  --text: #e8eaf0;          /* texto principal */
+  --muted: #a9b0c0;         /* texto secundario */
+  --primary: #6ea8fe;       /* acento */
+  --primary-600: #4e8cf7;   /* hover */
+  --ring: #9ec5fe;          /* foco */
+  --border: #1b1e27;        /* bordes sutiles */
+
+  /* Tipografía */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+               "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Escalas fluidas (clamp: min, preferida, max) */
+  --fs-xxs: clamp(0.75rem, 0.72rem + 0.2vw, 0.8rem);
+  --fs-xs:  clamp(0.85rem, 0.8rem + 0.3vw, 0.95rem);
+  --fs-sm:  clamp(0.95rem, 0.9rem + 0.4vw, 1.05rem);
+  --fs-md:  clamp(1.05rem, 1rem + 0.5vw, 1.15rem);
+  --fs-lg:  clamp(1.25rem, 1.1rem + 0.8vw, 1.5rem);
+  --fs-xl:  clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --fs-2xl: clamp(2rem, 1.6rem + 2vw, 3rem);
+
+  /* Spacing (escala 4/8) */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+
+  /* Radios y sombras */
+  --radius: 14px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 14px rgba(0,0,0,.18);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,.25);
+
+  /* Ancho contenedor y breakpoints */
+  --container: 1100px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+}
+
+/* Soporte modo claro si preferís esquema del SO */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --surface: #f7f8fa;
+    --text: #0f172a;
+    --muted: #475569;
+    --primary: #2563eb;
+    --primary-600: #1d4ed8;
+    --ring: #93c5fd;
+    --border: #e5e7eb;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  font-size: var(--fs-md);
+}
+
+/* Tipografía y jerarquía */
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 var(--sp-4);
+  letter-spacing: -0.01em;
+}
+h1 { font-size: var(--fs-2xl); }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: var(--fs-lg); }
+
+p { margin: 0 0 var(--sp-4); color: var(--text); }
+small, .muted { color: var(--muted); }
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* Accesibilidad: foco visible */
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ========== Layout ========== */
+.container {
+  width: min(100%, var(--container));
+  margin-inline: auto;
+  padding: 0 var(--sp-4);
+}
+
+.section {
+  padding: var(--sp-10) 0;
+  border-top: 1px solid var(--border);
+}
+.section:first-of-type { border-top: none; }
+
+/* Grid utilitario */
+.grid {
+  display: grid;
+  gap: var(--sp-6);
+}
+@media (min-width: 768px) {
+  .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Header / Nav minimalista */
+.header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: saturate(180%) blur(8px);
+  background: color-mix(in oklab, var(--bg), transparent 30%);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-4) 0;
+}
+.nav a { color: var(--text); }
+.nav .brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: var(--sp-8) 0;
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+
+/* ========== Componentes ========== */
+/* Botón */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .7rem 1rem;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid color-mix(in oklab, var(--primary), #000 15%);
+  box-shadow: var(--shadow-sm);
+  transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+  font-weight: 600;
+}
+.btn:hover {
+  background: var(--primary-600);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.btn:active { transform: translateY(0); }
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn--block { width: 100%; }
+
+/* Card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+}
+.card:hover { box-shadow: var(--shadow-md); }
+
+/* Lista de features */
+.list {
+  display: grid;
+  gap: var(--sp-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.list li { display: flex; gap: .5rem; }
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: .25rem .55rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--primary), transparent 80%);
+  color: var(--primary);
+  font-size: var(--fs-xxs);
+  border: 1px solid color-mix(in oklab, var(--primary), transparent 60%);
+}
+
+/* ========== Formulario ========== */
+.form {
+  display: grid;
+  gap: var(--sp-4);
+}
+.label {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+}
+.input, .textarea, .select {
+  width: 100%;
+  padding: .8rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface), transparent 0%);
+  color: var(--text);
+  outline: none;
+  transition: border-color .15s ease, box-shadow .2s ease;
+}
+.textarea { min-height: 9rem; resize: vertical; }
+.input::placeholder, .textarea::placeholder { color: var(--muted); }
+.input:focus, .textarea:focus, .select:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--ring), transparent 70%);
+}
+
+/* ========== Utilidades ========== */
+.center { text-align: center; }
+.stack-xs > * + * { margin-top: var(--sp-2); }
+.stack-sm > * + * { margin-top: var(--sp-3); }
+.stack > * + *    { margin-top: var(--sp-4); }
+.stack-lg > * + * { margin-top: var(--sp-6); }
+
+.max-w-sm { max-width: 520px; }
+.max-w-md { max-width: 720px; }
+.max-w-lg { max-width: 960px; }
+
+.m-auto { margin-inline: auto; }
+.mt-8 { margin-top: var(--sp-8); }
+.mb-8 { margin-bottom: var(--sp-8); }
+.py-8 { padding-block: var(--sp-8); }
+
+/* ========== Responsive helpers ========== */
+@media (min-width: 768px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--sp-8);
+    align-items: center;
+  }
+}
+
+/* ========== Motion preferencia ========== */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
