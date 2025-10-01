@@ -93,16 +93,51 @@
     </div>
   </section>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer__grid">
-      <p>© <span id="year"></span> Tu Nombre. Todos los derechos reservados.</p>
-      <ul class="social">
-        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
-        <li><a href="#" aria-label="GitHub">GitHub</a></li>
-        <li><a href="#" aria-label="X/Twitter">X</a></li>
-      </ul>
-    </div>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  </footer>
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer__grid">
+    <p>© <span id="year"></span> Tu Nombre. Todos los derechos reservados.</p>
+    
+    <!-- Bloque de redes sociales -->
+    <ul class="social">
+      <!-- LinkedIn -->
+      <li>
+        <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.84-2.2 3.79-2.2 4.05 0 4.8 2.67 4.8 6.14V24h-4v-7.1c0-1.7-.03-3.88-2.37-3.88-2.38 0-2.74 1.85-2.74 3.76V24h-4V8z"/>
+          </svg>
+        </a>
+      </li>
+
+      <!-- GitHub -->
+      <li>
+        <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M12 .5A12 12 0 0 0 0 12.7c0 5.4 3.4 10 8.1 11.6.6.1.8-.3.8-.6v-2c-3.3.8-4-1.6-4-1.6-.6-1.4-1.5-1.8-1.5-1.8-1.2-.8.1-.8.1-.8 1.3.1 2 .3 2.5 1 .2.4 1.9 2.5 3.1 1.8.6-1 .1-.4-.4-1.6-1.3-2.6-3.5-2.6-5.8 0-4 3-7.2 6.7-7.2S5.3 7.7 5.3 7.7c-.7-1.9.1-3.3.1-3.3 1.5-2.1 3.7-1.5 3.7-1.5 1.6.4 2.5 1.6 2.5 1.6 1.4-2.5 3.6-1.8 4.4-1.4.1 1 .5 1.8.9 2.1 2.2.3 4.6 1.1 4.6 5.1 0 2.3-.9 4.5-2.6 5.8-.5.4-.6.8-.4 1.6.3 1.1.6 2.3.6 2.6 0 .3.2.7.8.6A12 12 0 0 0 24 12.7 12 12 0 0 0 12 .5z"/>
+          </svg>
+        </a>
+      </li>
+
+      <!-- X (Twitter) -->
+      <li>
+        <a href="https://x.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M18.244 2H21.5l-7.5 8.57L23 22h-6.09l-4.76-6.2L6.7 22H3.44l8-9.15L1 2h6.19l4.31 5.67L18.24 2zm-2.14 17.8h1.71L7.98 4.1H6.2l9.91 15.7z"/>
+          </svg>
+        </a>
+      </li>
+
+      <!-- WhatsApp -->
+      <li>
+        <a href="https://wa.me/5493515152329?text=Hola%20Ezequiel%2C%20vi%20tu%20portafolio" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M20.5 3.5A11 11 0 0 0 3.2 18.6L2 22l3.5-1.1A11 11 0 1 0 20.5 3.5zm-8.6 16a9 9 0 0 1-4.6-1.3l-.3-.2-2.7.8.8-2.6-.2-.3a9 9 0 1 1 7 3.6zm5-6.5c-.3-.2-1.7-.9-1.9-1-.2-.1-.4-.2-.6.2-.2.3-.7 1-.8 1.1-.1.2-.3.2-.6.1a7.3 7.3 0 0 1-2.1-1.3 7.8 7.8 0 0 1-1.4-1.8c-.2-.3 0-.4.2-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.8-.6-.7-.8-.7h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 3s1.2 3.5 1.4 3.8c.2.3 2.4 3.6 5.7 4.9.8.3 1.5.5 2 .6.8.2 1.6.2 2.3.1.7-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.6-.1-.2-.3-.3-.6-.5z"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</footer>
 </body>
 </html>
