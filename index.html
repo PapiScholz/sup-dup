@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio de Servicios — Tu Nombre</title>
+  <meta name="description" content="Servicios de IT y Ciberseguridad: auditorías, hardening, monitoreo y más." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">TuLogo</a>
+      <nav class="site-nav" role="navigation" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#cta">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="hero" role="main">
+    <div class="container">
+      <h1 class="hero__title">Soluciones IT & Ciberseguridad para tu negocio</h1>
+      <p class="hero__subtitle">Implemento y optimizo entornos Windows, Linux y M365. Detección de incidentes, hardening y automatización.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="mailto:tuemail@dominio.com?subject=Quiero%20asesoramiento">Escríbeme</a>
+        <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+      </div>
+    </div>
+  </main>
+
+  <section id="servicios" class="services" aria-labelledby="servicios-title">
+    <div class="container">
+      <h2 id="servicios-title">Servicios</h2>
+      <p class="section-lead">Paquetes claros, resultados medibles. Se pueden adaptar a tu contexto.</p>
+
+      <div class="services__grid">
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
+              <path d="M12 2l7 3v6c0 5-3.5 9.7-7 11-3.5-1.3-7-6-7-11V5l7-3zM7 8v3c0 3.8 2.5 7.7 5 8.9 2.5-1.2 5-5.1 5-8.9V8l-5-2.1L7 8z"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Hardening & Auditoría</h3>
+          <p class="service-card__desc">Cierre de brechas, endurecimiento de endpoints/servidores, revisión de políticas y buenas prácticas.</p>
+          <ul class="service-card__bullets">
+            <li>Baseline Windows / Linux</li>
+            <li>Revisión de GPO / Intune</li>
+            <li>Reporte con hallazgos y acciones</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
+              <path d="M19 18H7a4 4 0 010-8 5 5 0 119.6 1.5A3.5 3.5 0 1119 18z"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">M365 & Cloud Readiness</h3>
+          <p class="service-card__desc">Configuración segura de Microsoft 365, identidades y acceso condicional.</p>
+          <ul class="service-card__bullets">
+            <li>Entra ID / MFA</li>
+            <li>Defender & Secure Score</li>
+            <li>Guía de adopción</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
+              <path d="M22 7.2l-4.6 4.6-2.2-2.2L19.8 5A5 5 0 1112 12.8l-7.6 7.6a2 2 0 11-2.8-2.8L9.2 10A5 5 0 1122 7.2z"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Monitoreo & Automatización</h3>
+          <p class="service-card__desc">Alertas útiles, scripts de mantenimiento y tableros de salud.</p>
+          <ul class="service-card__bullets">
+            <li>Playbooks en PowerShell</li>
+            <li>Checks de seguridad</li>
+            <li>Dashboards básicos</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="cta" aria-labelledby="cta-title">
+    <div class="container">
+      <h2 id="cta-title">¿Hablamos de tu caso?</h2>
+      <p class="cta__text">En la próxima etapa agregaremos un formulario. Por ahora, puedes contactarme por email.</p>
+      <a class="btn btn--primary" href="mailto:tuemail@dominio.com?subject=Quiero%20una%20consulta">Contactar ahora</a>
+    </div>
+  </section>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Tu Nombre. Todos los derechos reservados.</p>
+      <ul class="social">
+        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+        <li><a href="#" aria-label="GitHub">GitHub</a></li>
+        <li><a href="#" aria-label="X/Twitter">X</a></li>
+      </ul>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
